@@ -45,3 +45,8 @@ p = ['a', 'b', 'c']
 del p[0]
 print(p)
 '''
+# will print last to first with -2 increment
+
+a = [5, 10, 15, 25, 30, 35, 40]
+print(a[::-2])
+
