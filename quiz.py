@@ -33,8 +33,36 @@ while (x < 100):
     x+=2
 if x % 33 == 0:
     print(‘This is an awkward loop!’)
-    '''
+
 for i in range(1001, 2001, 202):
      for j in range(-15, -150, -2):
      for k in range(1, 10):
       print(i,j,k, end=’,’)
+
+
+d = {"name": "M", "salary": 18000}
+temp = d.pop("age")
+print(temp)
+'''
+company_dict = {
+    "Manager":
+        [
+            {
+                "Name": "Hasan",
+                "Languages Used": [
+                    'C',
+                    'C++',
+                    'Rust'
+                ]
+            },
+            {
+
+                "Name": "Monaz",
+                "Languages Used": [
+                    'Python',
+                    'Go',
+                    'Haskel'
+                ]
+            }
+        ]
+}
