@@ -23,6 +23,7 @@ class StoryBook:
     def get_author_info(self):
         print(f'The Author name is: {self.author_name}, born: {self.author_born}')
 
+    # set discount
     def apply_discount(self):
         self.price = int(self.price - self.price * self.discount)
 
