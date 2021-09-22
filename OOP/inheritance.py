@@ -52,14 +52,28 @@ class HouseBot(Robot):
         super().move_forward()
 
 
-hBot = HouseBot('hBot', 1.1, 50)
-print(hBot.name)
-print(hBot.version)
-hBot.move_forward()
-hBot.move_right()
-hBot.clean()
-hBot.clean()
-hBot.clean()
-print(hBot.area_covered)
-hBot.set_cover_area(50)
-hBot.clean()
+class MaidBot(HouseBot):
+    def __init__(self, name, version, area_covered, cooking):
+        super().__init__(name, version, area_covered)
+        self.cooking = cooking
+
+
+m = MaidBot('a', 1.1, 10, 'noodles')
+
+houseBot = MaidBot('Bob', 1.1, 50, 23)
+robo = Robot('Stan lee', 1.5)
+
+print(houseBot.cooking)
+
+
+# hBot = HouseBot('hBot', 1.1, 50)
+# print(hBot.name)
+# print(hBot.version)
+# hBot.move_forward()
+# hBot.move_right()
+# hBot.clean()
+# hBot.clean()
+# hBot.clean()
+# print(hBot.area_covered)
+# hBot.set_cover_area(50)
+# hBot.clean()
