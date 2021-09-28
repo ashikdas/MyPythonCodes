@@ -22,9 +22,17 @@ class Point2D:
         else:
             return None
 
+    def __ne__(self, other):
+        if isinstance(self, other.__class__):
+            return self.x != other.x or self.y != other.y
+
     def __eq__(self, other):
         if isinstance(self, other.__class__):
             return self.x == other.x and self.y == other.y
+
+    def __lt__(self, other):
+        if isinstance(self, other.__class__):
+            return self.x < other.x or (self.x == other.x and self.y < other.y)
 
 
 p1 = Point2D(2, 3)
@@ -35,10 +43,14 @@ p4 = Point2D(2, 3)
 # print(repr(p2))
 # print(str(p2))
 
-p3 = p1 + p2
-print(p3)
-print(p2 - p1)
+# p3 = p1 + p2
+# print(p3)
+# print(p2 - p1)
 
-print(p1 == p4)
-print(p1 is p4)
+# print(p1 != p2)
+# print(p1 != p4)
+
+print(p1 < p4)
+print(p1 < p2)
+# print(p1 is p4)
 
