@@ -34,6 +34,9 @@ class Point2D:
         if isinstance(self, other.__class__):
             return self.x < other.x or (self.x == other.x and self.y < other.y)
 
+    def __hash__(self):
+        return hash(self.x + self.y)
+
 
 p1 = Point2D(2, 3)
 p2 = Point2D(4, 5)
@@ -50,7 +53,22 @@ p4 = Point2D(2, 3)
 # print(p1 != p2)
 # print(p1 != p4)
 
-print(p1 < p4)
-print(p1 < p2)
-# print(p1 is p4)
+# print(p1 < p4)
+# print(p1 < p2)
+# # print(p1 is p4)
 
+# d = {}
+# d['Ashik'] = 10
+# d['das'] = 20
+#
+# print(d['Ashik'])
+
+point_set = set()
+point_dict = dict()
+
+point_set.add(p1)
+print(point_set)
+
+point_dict[p1] = str(p1)
+
+print(point_dict)
