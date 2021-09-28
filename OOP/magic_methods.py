@@ -8,7 +8,7 @@ class Point2D:
 
     def __str__(self):
         return f'Class: Point2D,' \
-            f' x: {self.x}, y: {self.y}'
+               f' x: {self.x}, y: {self.y}'
 
     def __add__(self, other):
         if isinstance(self, other.__class__):
@@ -22,14 +22,23 @@ class Point2D:
         else:
             return None
 
+    def __eq__(self, other):
+        if isinstance(self, other.__class__):
+            return self.x == other.x and self.y == other.y
+
+
 p1 = Point2D(2, 3)
 p2 = Point2D(4, 5)
-#
+p4 = Point2D(2, 3)
 # print(p1)
 #
 # print(repr(p2))
 # print(str(p2))
 
-p3 = p1+p2
+p3 = p1 + p2
 print(p3)
-print(p2-p1)
+print(p2 - p1)
+
+print(p1 == p4)
+print(p1 is p4)
+
