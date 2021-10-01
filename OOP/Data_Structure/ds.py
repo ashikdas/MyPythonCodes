@@ -45,6 +45,10 @@ class DoubleLinkedList:
 
             node = node.next
 
+    def remove_first(self):
+        if self.tail is not None:
+            self.__remove_node(self.head)
+
     def remove_last(self):
         if self.tail is not None:
             self.__remove_node(self.tail)
