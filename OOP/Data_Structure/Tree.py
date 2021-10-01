@@ -1,5 +1,6 @@
 from BinaryTreePrinter import BinaryTreePrinter
 from stack import Queue
+from stack import Stack
 
 
 class TreeNode:
@@ -68,6 +69,33 @@ class BST:
         tree_printer = BinaryTreePrinter()
         return tree_printer.get_tree_string(self.root)
 
+    def __in_order(self, node):
+        if node is None:
+            return
+        self.__in_order(node.left)
+        print(node.val, end=" ")
+        self.__in_order(node.right)
+
+    def in_order(self):
+        self.__in_order(self.root)
+
+    def contains(self, val):
+        nodes = Stack()
+        nodes.push(self.root)
+
+        while not nodes.is_empty():
+            node = nodes.pop()
+            if node.val == val:
+                return True
+            elif val < node.val:
+                if node.left is not None:
+                    node.push(node.left)
+            else:
+                if node.right is not None:
+                    nodes.push(node.right)
+        return False
+
+
 # my_tree = BinaryTree()
 # # for c in ['a', 'b', 'c', 'd']:
 # #     my_tree.insert(c)
@@ -79,3 +107,7 @@ bst = BST()
 for i in [8, 5, 3, 2, 9, 23,76,50,1]:
     bst.insert(i)
     print(bst)
+
+bst.in_order()
+print()
+print("Contains 10:", bst.contains(10))
