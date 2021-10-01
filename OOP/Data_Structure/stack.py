@@ -43,7 +43,7 @@ class Queue:
 
     def __len__(self):
         return self.__list.size
-    
+
 
 # my_stack = Stack()
 # my_stack.push(1)
@@ -57,16 +57,16 @@ class Queue:
 # print(my_stack.peek())
 
 
-my_queue = Queue()
-my_queue.enqueue(1)
-print(len(my_queue))
-print(my_queue.front())
-my_queue.enqueue(2)
-my_queue.enqueue(3)
-my_queue.enqueue(4)
-my_queue.enqueue(100)
-print(my_queue.front())
-print(len(my_queue))
-print(my_queue.front())
-my_queue.dequeue()
-print(my_queue.front())
+# my_queue = Queue()
+# my_queue.enqueue(1)
+# print(len(my_queue))
+# print(my_queue.front())
+# my_queue.enqueue(2)
+# my_queue.enqueue(3)
+# my_queue.enqueue(4)
+# my_queue.enqueue(100)
+# print(my_queue.front())
+# print(len(my_queue))
+# print(my_queue.front())
+# my_queue.dequeue()
+# print(my_queue.front())
