@@ -1,13 +1,13 @@
-from BinaryTreePrinter import BinaryTreePrinter
 from stack import Queue
 from stack import Stack
+from BinaryTreePrinter import BinaryTreePrinter
 
 
 class TreeNode:
     def __init__(self, val):
         self.left = None
         self.right = None
-        self.value = val
+        self.val = val
 
 
 class BinaryTree:
@@ -36,6 +36,21 @@ class BinaryTree:
     def __str__(self):
         tree_printer = BinaryTreePrinter()
         return tree_printer.get_tree_string(self.root)
+
+    def contains(self, val):
+        nodes = Stack()
+        nodes.push(self.root)
+
+        while not nodes.is_empty():
+            node = nodes.pop()
+            print("Checking node:", node.val)
+            if node.val == val:
+                return True
+            if node.right is not None:
+                nodes.push(node.right)
+            if node.left is not None:
+                nodes.push(node.left)
+        return False
 
 
 class BST:
@@ -85,11 +100,12 @@ class BST:
 
         while not nodes.is_empty():
             node = nodes.pop()
+            print("Checking node:", node.val)
             if node.val == val:
                 return True
             elif val < node.val:
                 if node.left is not None:
-                    node.push(node.left)
+                    nodes.push(node.left)
             else:
                 if node.right is not None:
                     nodes.push(node.right)
@@ -97,17 +113,17 @@ class BST:
 
 
 # my_tree = BinaryTree()
-# # for c in ['a', 'b', 'c', 'd']:
-# #     my_tree.insert(c)
-# #     print(my_tree)
-# my_tree.insert('a')
-# print(my_tree)
+# for c in ['a', 'b', 'c', 'd', 'e', 'f']:
+#     my_tree.insert(c)
+#     print(my_tree)
 
-bst = BST()
-for i in [8, 5, 3, 2, 9, 23,76,50,1]:
+
+bst = BinaryTree()
+for i in [8, 2, 1, 10, 100, 50, 40, 23, 16, 7, 9, 200, 150, 300]:
     bst.insert(i)
     print(bst)
 
-bst.in_order()
+# bst.in_order()
 print()
-print("Contains 10:", bst.contains(10))
+print("Contains 10:", bst.contains(150))
+print("Contains 0:", bst.contains(0))
