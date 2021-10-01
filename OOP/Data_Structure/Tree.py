@@ -26,7 +26,8 @@ class BinaryTree:
                     return
                 elif checking_node.right is None:
                     checking_node.right = TreeNode(val)
-                    return 
+                    return
                 else:
                     nodes.enqueue(checking_node.left)
                     nodes.enqueue(checking_node.right)
+
