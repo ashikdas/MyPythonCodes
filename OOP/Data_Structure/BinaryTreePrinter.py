@@ -1,11 +1,9 @@
 """
-printer Utility to print a binary tree like tree.
-
+Printer Utility to print a binary tree like a tree.
 Can print a binary tree whose root node has at least the following properties.
-
-node.left  # left child
-node.right  #right child
-node.val  #node value
+node.left    # left child
+node.right   # right child
+node.val     # value of the node
 """
 
 
