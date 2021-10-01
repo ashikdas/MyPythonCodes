@@ -34,12 +34,20 @@ class DoubleLinkedList:
         else:
             node.next.prev = node.prev
 
+        self.size -= 1
+
     def remove(self, value):
         node = self.head
         while node is not None:
             if node.val == value:
                 self.__remove_node(node)
+                break
+
             node = node.next
+
+    def remove_last(self):
+        if self.tail is not None:
+            self.__remove_node(self.tail)
 
     def __str__(self):
         vals =[]
@@ -66,5 +74,5 @@ my_list.add(5)
 my_list.add(7)
 print(my_list)
 print(my_list.size)
-my_list.remove(5)
+my_list.remove_last()
 print(my_list)
